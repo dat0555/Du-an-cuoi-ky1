@@ -62,4 +62,20 @@ graph TD
 - Nền tảng lập trình: PlatformIO / Arduino IDE (Ngôn ngữ C/C++)
 - Giao thức mạng: MQTT (sử dụng thư viện PubSubClient)
 - MQTT Broker Online: EMQX Broker
-- Giao diện & Cảnh báo: Node-RED (Node-RED Dashboard)                                    
+- Giao diện & Cảnh báo: Node-RED (Node-RED Dashboard)
+## 📚 Tài liệu Tham Khảo (References)
+
+### 1. Tài liệu Kỹ thuật & Sách (Datasheets & Books)
+- **Espressif Systems** (2023). *ESP32 Series Datasheet*. Truy cập từ: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+- **Hanwei Electronics** (2015). *Technical Data MQ-2 Gas Sensor*. Truy cập từ: https://www.sparkfun.com/datasheets/Sensors/Biomedical/MQ-2.pdf
+- **Koushik, A.** (2020). *Building Smart IoT Projects using ESP32, MQTT, and Node-RED*. Apress.
+
+### 2. Giao thức & Nền tảng (Protocols & Platforms)
+- **MQTT.org**: *MQTT Version 5.0 Specification*. OASIS Standard. Truy cập từ: https://mqtt.org/
+- **Node-RED Documentation**: *Creating Dashboards and Flow Automation*. Truy cập từ: https://nodered.org/docs/
+- **EMQX Documentation**: *Getting Started with Public MQTT Broker*. Truy cập từ: https://www.emqx.com/en/mqtt/public-mqtt-broker
+
+### 3. Bài viết Kỹ thuật & Đề tài Tham khảo (Technical Guides & Projects)
+- **Random Nerd Tutorials**: *ESP32 MQTT Publish Subscribe with Arduino IDE*. Truy cập từ: https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/
+- **Hackaday Projects**: *IoT Smart Fire & Smoke Alarm Systems*. Truy cập từ: https://hackaday.io/projects?tag=fire%20alarm
+- **Circuit Digest**: *IoT Based Fire Alarm System using ESP32 & Telegram Alert*. Truy cập từ: https://circuitdigest.com/microcontroller-projects/iot-based-fire-alarm-system-using-esp32                                  
