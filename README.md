@@ -58,7 +58,7 @@ graph TD
     class CB1,CB2,CB3,ESP,XL,WF,MQTT,DS,USER purpleBox;
 ```
 
-# Tóm tắt bài toán  
+# 4 Tóm tắt bài toán  
 - Nền tảng lập trình: PlatformIO / Arduino IDE (Ngôn ngữ C/C++)
 - Giao thức mạng: MQTT (sử dụng thư viện PubSubClient)
 - MQTT Broker Online: EMQX Broker
