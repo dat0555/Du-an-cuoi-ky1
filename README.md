@@ -1,9 +1,9 @@
 # Du-an-cuoi-ky1
 #  Hệ Thống Báo Cháy & Cảnh Báo Sớm Thông Minh
 > **Môn học:** Hệ thống nhúng & IoT  
-> **Sinh viên thực hiện: Lê Văn Đạt 
-> **MSSV:23001592
-> **Lớp: K68 Kỹ thuật điện tử và tin học
+> - Sinh viên thực hiện: Lê Văn Đạt 
+> - MSSV:23001592
+> - Lớp: K68 Kỹ thuật điện tử và tin học
 
 # 1. Đặt Bài Toán & Tính Ứng Dụng 
 Hiện nay, nguy cơ cháy nổ tại các hộ gia đình, chung cư mini, kho xưởng diễn ra ngày càng phức tạp và để lại hậu quả nghiêm trọng. Hầu hết các hệ thống báo cháy truyền thống hiện nay chỉ phát ra âm thanh tại chỗ, dẫn đến việc:
