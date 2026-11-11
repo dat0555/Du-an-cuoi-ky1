@@ -56,7 +56,7 @@ graph TD
     %% Áp dụng màu sắc
     class KCB yellowBox;
     class CB1,CB2,CB3,ESP,XL,WF,MQTT,DS,USER purpleBox;
-
+```
 
 # Tóm tắt bài toán  
 - Nền tảng lập trình: PlatformIO / Arduino IDE (Ngôn ngữ C/C++)
