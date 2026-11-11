@@ -23,7 +23,7 @@ Dự án **"Hệ Thống Báo Cháy & Cảnh Báo Sớm Thông Minh dựa trên 
 # 3. Sơ Đồ Khối Hệ Thống (System Block Diagram)
 ```mermaid
 graph TD
-    %% Phong cách màu sắc giống mẫu
+    %% Phong cách màu sắc
     classDef yellowBox fill:#FFFFD8,stroke:#C3B1E1,stroke-width:1.5px;
     classDef purpleBox fill:#E6E6FA,stroke:#B0A0E0,stroke-width:1.5px,rx:5px,ry:5px;
 
