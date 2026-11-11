@@ -21,48 +21,42 @@ Dự án **"Hệ Thống Báo Cháy & Cảnh Báo Sớm Thông Minh dựa trên 
 - Tự động hóa hành vi an toàn :Ngoài phát âm thanh cảnh báo, hệ thống lập tức điều khiển Servo ngắt van cấp gas và kích hoạt Rơ-le điều khiển quạt hút khói/bơm nước.
 - Giao thức truyền dữ liệu MQTT tối ưu: Dùng MQTT truyền dữ liệu lên Broker trung gian theo cơ chế Publish/Subscribe , đảm bảo độ trễ cực thấp.
 # 3. Sơ Đồ Khối Hệ Thống (System Block Diagram)
-
 ```mermaid
-flowchart TD
-    subgraph KHỐI_CẢM_BIẾN ["KHỐI CẢM BIẾN (INPUT)"]
+graph TD
+    %% Phong cách màu sắc giống mẫu
+    classDef yellowBox fill:#FFFFD8,stroke:#C3B1E1,stroke-width:1.5px;
+    classDef purpleBox fill:#E6E6FA,stroke:#B0A0E0,stroke-width:1.5px,rx:5px,ry:5px;
+
+    %% Khối cảm biến
+    subgraph KCB["KHỐI CẢM BIẾN"]
         direction LR
-        MQ2["Cảm biến khí/khói<br/>(MQ-2)"]
-        DHT["Cảm biến nhiệt độ, độ ẩm<br/>(DHT11/DHT22)"]
-        Flame["Cảm biến phát hiện lửa IR<br/>(Flame Sensor)"]
+        CB1["Cảm biến Khói / Gas<br>(MQ-2)"]
+        CB2["Cảm biến Nhiệt độ / Độ ẩm<br>(DHT11)"]
+        CB3["Cảm biến Lửa<br>(IR Sensor)"]
     end
 
-    ESP32["KHỐI XỬ LÝ TRUNG TÂM (ESP32)<br/>- Thu thập & xử lý dữ liệu<br/>- Đánh giá cấp độ nguy hiểm<br/>- Đóng gói dữ liệu qua MQTT"]
+    ESP["ESP32 DevKit V1"]
+    XL["Xử lý dữ liệu & Thuật toán"]
+    WF["Wi-Fi"]
+    MQTT["EMQX MQTT Broker"]
+    DS["Node-RED Dashboard"]
+    USER["Người dùng / Telegram Bot"]
 
-    subgraph BỘ_THỰC_THI ["BỘ THỰC THI (ACTUATORS)"]
-        direction LR
-        Buzzer["Còi báo động (Buzzer)"]
-        LED["Đèn LED cảnh báo (RGB)"]
-        Servo["Động cơ Servo (Ngắt van)"]
-        Relay["Rơ-le (Bật bơm/quạt)"]
-    end
+    %% Đường nối dữ liệu
+    CB1 --> ESP
+    CB2 --> ESP
+    CB3 --> ESP
 
-    MQTT["MQTT BROKER<br/>(EMQX / HiveMQ)"]
-    NodeRed["NODE-RED DASHBOARD<br/>& Gửi tin nhắn Telegram"]
+    ESP --> XL
+    XL --> WF
+    WF <--> MQTT
+    MQTT <--> DS
+    DS --> USER
 
-    %% Luồng kết nối
-    MQ2 --> ESP32
-    DHT --> ESP32
-    Flame --> ESP32
+    %% Áp dụng màu sắc
+    class KCB yellowBox;
+    class CB1,CB2,CB3,ESP,XL,WF,MQTT,DS,USER purpleBox;
 
-    ESP32 --> Buzzer
-    ESP32 --> LED
-    ESP32 --> Servo
-    ESP32 --> Relay
-
-    ESP32 <-->|"MQTT Protocol"| MQTT
-    MQTT <--> NodeRed
-
-    %% Tùy chỉnh màu sắc (CSS Styling)
-    style KHỐI_CẢM_BIẾN fill:#ffffcc,stroke:#d6d67a,stroke-width:2px,color:#000
-    style BỘ_THỰC_THI fill:#e6f2ff,stroke:#99c2ff,stroke-width:2px,color:#000
-    style ESP32 fill:#e6ccff,stroke:#b366ff,stroke-width:2px,color:#000
-    style MQTT fill:#d9f2e6,stroke:#80dfb0,stroke-width:2px,color:#000
-    style NodeRed fill:#ffe6e6,stroke:#ff9999,stroke-width:2px,color:#000
 
 # Tóm tắt bài toán  
 - Nền tảng lập trình: PlatformIO / Arduino IDE (Ngôn ngữ C/C++)
