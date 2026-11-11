@@ -52,6 +52,6 @@ Dự án **"Hệ Thống Báo Cháy & Cảnh Báo Sớm Thông Minh dựa trên 
                                     +-----------------------+
 # Tóm tắt bài toán  
 - Nền tảng lập trình: PlatformIO / Arduino IDE (Ngôn ngữ C/C++)
--Giao thức mạng: MQTT (sử dụng thư viện PubSubClient)
--MQTT Broker Online: EMQX Broker
--Giao diện & Cảnh báo: Node-RED (Node-RED Dashboard)                                    
+- Giao thức mạng: MQTT (sử dụng thư viện PubSubClient)
+- MQTT Broker Online: EMQX Broker
+- Giao diện & Cảnh báo: Node-RED (Node-RED Dashboard)                                    
